@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f3">
+<title>A Little Message For You 🐮</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+:root{--pink:#f5a9bb;--deep:#d96d8a;--cream:#fffaf3;--ink:#46353b;--muted:#927d83}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:'DM Sans',sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 12%,#ffe1e9 0,transparent 27%),radial-gradient(circle at 90% 80%,#fce8cf 0,transparent 25%),#fff8f5;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(2px);opacity:.55;z-index:-1}.b1{width:180px;height:180px;background:#ffd6e0;top:10%;right:-60px}.b2{width:140px;height:140px;background:#f8e2c4;bottom:5%;left:-50px}
+.wrap{width:min(720px,92%);margin:34px auto 50px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.pill{background:#fff;border:1px solid #f7dce3;padding:9px 13px;border-radius:30px}
+.card{background:rgba(255,255,255,.86);border:1px solid #fff;box-shadow:0 22px 70px rgba(153,94,111,.13);border-radius:30px;padding:clamp(22px,5vw,48px);backdrop-filter:blur(12px)}
+.hero{text-align:center}.cow{font-size:76px;display:inline-grid;place-items:center;width:124px;height:124px;border-radius:38px;background:linear-gradient(145deg,#fff0f3,#fff9ec);box-shadow:inset 0 0 0 1px #fff,0 12px 30px #e9b9c755;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+.eyebrow{color:var(--deep);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin:24px 0 10px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,52px);line-height:1.08;margin:0 0 14px}h1 span{color:var(--deep)}
+.sub{color:var(--muted);line-height:1.7;font-size:14px;max-width:470px;margin:0 auto}
+.btn{border:0;border-radius:16px;padding:15px 22px;font:700 14px 'DM Sans';cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.02)}.primary{background:linear-gradient(135deg,#ee9db2,#dc718e);color:white;box-shadow:0 10px 22px #df829c55}.soft{background:#fff2f5;color:#b85b77;border:1px solid #f8dce4}
+.hero .btn{margin-top:27px}.hidden{display:none!important}
+.message{margin-top:22px}.message h2{font-family:'Playfair Display',serif;font-size:29px;margin:0 0 8px}.message .intro{color:var(--muted);font-size:13px;margin:0 0 20px}
+.letter{background:#fffaf7;border:1px solid #f5e8e3;border-radius:20px;padding:22px;line-height:1.85;font-size:14px;white-space:pre-line}
+.sign{color:var(--deep);font-weight:800;margin-top:18px}
+.reply{margin-top:22px}.reply h3{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 7px}.reply p{font-size:13px;color:var(--muted);margin:0 0 15px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{padding:15px;border:1px solid #f1dce2;background:white;border-radius:15px;color:var(--ink);font:700 14px 'DM Sans';cursor:pointer}.choice.active{background:#fff0f4;border:2px solid var(--pink);color:#b44f6e}
+textarea{width:100%;min-height:105px;resize:vertical;border:1px solid #f0dce2;border-radius:15px;padding:14px;font:14px 'DM Sans';outline:none;margin-top:12px;background:#fffdfc;color:var(--ink)}textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px #f5a9bb22}
+.send{width:100%;margin-top:12px}.note{text-align:center;color:#a38e94;font-size:11px;margin:17px 0 0}.status{font-size:13px;text-align:center;margin-top:12px;min-height:18px;color:#a94f6c}
+.heart{position:fixed;bottom:-20px;opacity:0;pointer-events:none;animation:float 7s linear infinite}@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.65}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:520px){.wrap{margin:18px auto 30px}.top{font-size:10px}.card{border-radius:24px}.choices{grid-template-columns:1fr}.letter{padding:17px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<main class="wrap">
+  <div class="top"><span>♡ a tiny corner of the internet</span><span class="pill">moo made with love 🐮</span></div>
+  <section class="card hero" id="welcome">
+    <div class="cow">🐮</div>
+    <div class="eyebrow">a little something for you</div>
+    <h1>Hey, I have<br><span>something to tell you.</span></h1>
+    <p class="sub">Nggak panjang-panjang kok… cuma ada sesuatu yang udah lama pengen aku sampein. Jangan kabur dulu yaa hehe.</p>
+    <button class="btn primary" onclick="openLetter()">I have something to say <span>♡</span></button>
+    <p style="margin:16px 0 0"><a href="https://discord.gg/vGxCuBg2N" target="_blank" rel="noopener noreferrer" style="color:#b85b77;font-size:12px;font-weight:700;text-decoration:none">Join our Discord server ↗</a></p>
+  </section>
+
+  <section class="card message hidden" id="letter">
+    <div class="eyebrow">from someone who feels comfy with you</div>
+    <h2>For you, <span style="color:#d96d8a">with a little courage.</span></h2>
+    <p class="intro">Please read this when you have a little time 🤍</p>
+    <div class="letter">Hiii, ini pesan kedua kalinya tapi kali ini beda dari yang sebelumnya. Aku mau bilang sesuatu yang sebenernya dari kemarin pengen aku sampein ke kamu.
+
+Jujur aku tuh nyaman banget sama kamu, bahkan sampe kebawa ke ooc, bukan cuma sekedar ic aja. Aku juga gatau kenapa bisa senyaman ini sama seseorang, padahal interaksi kita selama ini cuma sebatas di ic dan kita juga baru sekali ngobrol di voice.
+
+Tapi entah kenapa dari situ aku ngerasa nyaman banget sama kamu. Aku suka dengerin kamu ngomong, suka dengerin cerita-cerita kamu, dan gatau kenapa rasanya selalu pengen dengerin kamu cerita lagi. Bahkan hal sesederhana dengerin kamu cerita aja bisa bikin aku seneng sendiri.
+
+Mungkin menurut kamu ini aneh, apalagi kita juga belum terlalu banyak ngobrol. Tapi aku sendiri juga bingung kenapa bisa ngerasain hal kayak gini. Aku cuma tau kalau aku nyaman sama kamu, dan kayaknya aku mulai suka sama hal-hal kecil tentang kamu.
+
+Aku ga berharap kamu harus ngerasain hal yang sama kok, aku cuma pengen jujur aja tentang apa yang aku rasain. Jadi kalau menurut kamu ini aneh, gapapa, aku cuma pengen kamu tau aja hehe.</div>
+    <div class="sign">— from me, sincerely ♡</div>
+    <div class="reply" style="text-align:center">
+      <h3>So… what do you think?</h3>
+      <p>Apapun jawaban kamu, aku harap kita ga bakal canggung yaaa. Aku tetap seneng bisa kenal kamu dan ngobrol sama kamu 🤍</p>
+      <a class="btn primary" href="https://discord.gg/vGxCuBg2N" target="_blank" rel="noopener noreferrer" style="text-decoration:none;width:100%;margin-top:8px">Balas langsung di Discord 💌</a>
+      <p style="font-size:12px;color:#a38e94;margin-top:12px">Klik tombol di atas buat masuk ke Discord dan kasih jawaban kamu langsung di chat yaa.</p>
+    </div>
+    <p class="note">Thank you for taking the time to read this ♡</p>
+  </section>
+</main>
+<script>
+function openLetter(){document.getElementById('welcome').classList.add('hidden');document.getElementById('letter').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});hearts();}
+function hearts(){for(let i=0;i<9;i++){let h=document.createElement('div');h.className='heart';h.textContent=['♡','♥','✿'][i%3];h.style.left=(Math.random()*95)+'%';h.style.animationDelay=(Math.random()*3)+'s';h.style.fontSize=(14+Math.random()*16)+'px';h.style.color='#e58ca5';document.body.appendChild(h);setTimeout(()=>h.remove(),8000);}}
+</script>
+</body>
+</html>
